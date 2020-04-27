@@ -46,6 +46,7 @@ public class NotasAlumnos {
             }
             
             float porcentaje = (100f*aprobados)/totalAlumnos;
+            System.out.println("Porcentaje de aprobados: " + porcentaje);
             if(porcentaje>80) return 'A';
             else if(porcentaje>50) return 'B';
             else return 'C';
