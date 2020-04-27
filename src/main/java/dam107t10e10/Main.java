@@ -20,10 +20,37 @@ cualquiera a las notas de los alumnos y calcule y muestre el nivel de la escuela
  */
 package dam107t10e10;
 
-/**
- *
- * @author User
- */
+import java.util.Scanner;
+
 public class Main {
-    
+
+    static NotasAlumnos notas;
+    static Scanner teclado;
+
+    public static void main(String[] args) {
+        notas = new NotasAlumnos(1, 10);
+        teclado = new Scanner(System.in);
+        float nota = 0;
+        boolean error;
+        do {
+            error = false;
+            try {
+                System.out.println("Dime nota (-1 salir): ");
+                nota = teclado.nextFloat();
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                if (nota!=-1 && notas.aniadirNota(nota)) {
+                    System.out.println("Nota añadida con exito...");
+                } else if (nota!=-1){
+                    throw new Exception();
+                }
+            }catch (Exception e) {
+                error = true;
+                teclado.nextLine();
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                System.out.println("Nota no valida");
+            }
+        } while (nota != -1 || error);
+
+        System.out.println("El nivel del colegio es: " + notas.nivel);
+    }
 }
