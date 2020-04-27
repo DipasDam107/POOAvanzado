@@ -1,16 +1,16 @@
 package dam107t10e9;
 
-public class OperadorEntero implements Operable {
+public class OperadorEntero implements Operable <Integer> {
 
 
     @Override
-    public Integer suma(Object valor1, Object valor2) {
-        return ((Integer) valor1) + ((Integer) valor2);
+    public Integer suma(Integer valor1, Integer valor2) {
+        return valor1 +  valor2;
     }
 
     @Override
-    public Integer resta(Object valor1, Object valor2) {
-        return ((Integer) valor1) - ((Integer) valor2);
+    public Integer resta(Integer valor1, Integer valor2) {
+        return valor1 -  valor2;
     }
     
 }
